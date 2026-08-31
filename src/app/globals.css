@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
+/* Palet & nada visual — UI-REFERENSI.md Bagian 5.
+   Latar stone-50 (bukan putih murni), teks kontras tinggi, satu warna aksen,
+   status warna teredam (700 di atas 50), tanpa dark mode. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafaf9; /* stone-50 */
+  --foreground: #1c1917; /* stone-900, kontras tinggi */
+  --muted: #78716c; /* stone-500 */
+  --card-border: #e7e5e4; /* stone-200 */
+
+  --accent: #1d4ed8; /* biru teduh — satu-satunya warna aksen di seluruh app */
+  --accent-foreground: #fafaf9;
+
+  --status-belum-bg: #fef2f2;
+  --status-belum-fg: #b91c1c;
+  --status-lemah-bg: #fffbeb;
+  --status-lemah-fg: #b45309;
+  --status-cukup-bg: #fefce8;
+  --status-cukup-fg: #a16207;
+  --status-kuat-bg: #ecfdf5;
+  --status-kuat-fg: #047857;
+  --status-netral-bg: #f5f5f4;
+  --status-netral-fg: #57534e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Satu radius, satu level bayangan — dipakai konsisten lewat komponen ui/*, bukan
+   diulang manual di tiap halaman. Animasi (kalau ada) selalu transition-duration-150,
+   diterapkan per elemen lewat Tailwind, bukan reset global. */
+:root {
+  --radius: 1rem;
+  --shadow-card: 0 1px 2px 0 rgb(0 0 0 / 0.04);
 }
