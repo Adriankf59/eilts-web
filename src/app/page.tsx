@@ -87,9 +87,14 @@ export default async function HariIniPage() {
 
       <p className="text-xs text-muted">{rolling.label}</p>
 
-      <Link href="/backup" className="text-xs text-muted/60 hover:text-muted">
-        backup
-      </Link>
+      <div className="flex gap-4">
+        <Link href="/tips" className="text-xs text-muted/60 hover:text-muted">
+          tips
+        </Link>
+        <Link href="/backup" className="text-xs text-muted/60 hover:text-muted">
+          backup
+        </Link>
+      </div>
     </main>
   );
 }
